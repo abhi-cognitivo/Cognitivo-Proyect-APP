@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
+             x:Class="Fidabel.ProductionOrder">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="50" ></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Text="Back" Clicked="Button_Clicked" Grid.Row="0"/>
+        <syncfusion:SfDataGrid x:Name="dataGridorder"  ColumnSizer="Star" Grid.Row="1"
+            AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectionMode="Single"
+                             >
+            <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                <syncfusion:GridTextColumn HeaderText="Order" 
+                                   MappingName="name" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</ContentPage>
